@@ -10211,7 +10211,7 @@ iiiiiliiliiiiii~             "4lili
 EOF
         ;;
 
-        "rolling_small"*)
+        "rhino_small"*)
             set_colors 104 7 7 98 7 55
                 read -rd '' ascii_data <<'EOF'
 ${c1}       .;:;,.  .:       
@@ -10229,7 +10229,7 @@ ${c6}       ${c2}:k
 EOF
         ;;
 
-        "rolling"*)
+        "rhino"*)
             set_colors 104 7 7 98 7 55
                 read -rd '' ascii_data <<'EOF'
 ${c1}            ..','..      l.           
