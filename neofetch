@@ -1846,7 +1846,7 @@ get_de() {
         KDE_SESSION_VERSION*) de=KDE${de/* = } ;;
         *xfce4*)  de=Xfce4 ;;
         *xfce5*)  de=Xfce5 ;;
-        *xfce*)   de=Xfce ;;
+        *unicorn*)   de=Unicorn ;;
         *mate*)   de=MATE ;;
         *GNOME*)  de=GNOME ;;
         *MUFFIN*) de=Cinnamon ;;
@@ -1858,7 +1858,6 @@ get_de() {
         case $de in
             Plasma*)   de_ver=$(plasmashell --version) ;;
             MATE*)     de_ver=$(mate-session --version) ;;
-            Xfce*)     de_ver=$(xfce4-session --version) ;;
             GNOME*)    de_ver=$(gnome-shell --version) ;;
             Cinnamon*) de_ver=$(cinnamon --version) ;;
             Deepin*)   de_ver=$(awk -F'=' '/MajorVersion/ {print $2}' /etc/os-version) ;;
