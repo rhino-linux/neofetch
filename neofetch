@@ -34,6 +34,7 @@ version=7.1.0
 # but do not set the 'BASH_' shell variables (osh).
 bash_version=${BASH_VERSINFO[0]:-5}
 shopt -s eval_unsafe_arith &>/dev/null
+shopt -s checkwinsize; (:); export COLUMNS
 
 sys_locale=${LANG:-C}
 XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-${HOME}/.config}
@@ -1229,7 +1230,11 @@ get_distro() {
         distro+=" $machine_arch"
 
     [[ ${ascii_distro:-auto} == auto ]] && \
-        ascii_distro=$(trim "$distro")
+        if [[ "${COLUMNS}" -lt 85 ]]; then
+            ascii_distro=rhino_small
+        else
+            ascii_distro=$(trim "$distro")
+        fi
 }
 
 get_model() {
