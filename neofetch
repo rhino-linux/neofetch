@@ -1230,7 +1230,7 @@ get_distro() {
         distro+=" $machine_arch"
 
     [[ ${ascii_distro:-auto} == auto ]] && \
-        if [[ "${COLUMNS}" -lt 85 ]]; then
+        if ((COLUMNS < 85)); then
             ascii_distro=rhino_small
         else
             ascii_distro=$(trim "$distro")
