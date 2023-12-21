@@ -2214,6 +2214,17 @@ get_cpu() {
                     cpu="$(awk -F '\\s*: | @' \
                             '/model name|Hardware|Processor|^cpu model|chip type|^cpu type/ {
                             cpu=$2; if ($1 == "Hardware") exit } END { print cpu }' "$cpu_file")"
+
+                    if [[ ${cpu} == "BCM2835" ]]; then
+                        case $((16#$(awk '/Revision/ {print substr($3,length($3)-3,1)}' "$cpu_file"))) in
+                            0) cpu="BCM2835" ;;
+                            1) cpu="BCM2836" ;;
+                            2) cpu="BCM2837" ;;
+                            3) cpu="BCM2711" ;;
+                            4) cpu="BCM2712" ;;
+                            *) cpu="BCM2835" ;;
+                        esac
+                    fi
                 ;;
             esac
 
