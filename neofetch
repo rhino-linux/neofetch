@@ -9372,24 +9372,24 @@ ${c1}      :+sMs.
 EOF
         ;;
 
-        "pacstall_small"*)
-            set_colors 30 214 30 30 30 214
-                read -rd '' ascii_data <<'EOF'
+              "pacstall_small"*)
+                       set_colors 30 214 30 30 30 214
+                           read -rd '' ascii_data <<'EOF'
 ${c2}           .,cdxkO0Oxl 
-${c2}       ,cdOkkl000000k  
-${c2}    .d000x${c1}:;,${c2}cok00,    
+${c2}       ,cdOk${c1}.${c2}l00000k  
+${c2}    .d000x${c1}:;;,${c2}cok00,    
 ${c2}     oO0x${c1}:::::;:${c2}dOOl:, 
 ${c2}   ;d000l${c1}:::.::${c2}coO0000.
 ${c2}  ..dk00${c1};::::${c2}cO000.    
 ${c2}  :k00; ${c1}.:::::;        
-${c2};O:       ${c1}::::'        
-${c1}     . ;;.             
+${c2};O:       ${c1}::::'        
+${c1}     .: ;;.             
 EOF
-        ;;    
+        ;;    
 
         "pacstall"*)
             set_colors 30 214 30 30 30 214
-                read -rd '' ascii_data <<'EOF'
+            read -rd '' ascii_data <<'EOF'
 ${c2}                    .';codxkO00Oxo;  
 ${c2}              .':oxO000000000000000O'
 ${c2}          .;dO00000x${c1}:;${c2}0000000c   
