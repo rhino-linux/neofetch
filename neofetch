@@ -4800,7 +4800,6 @@ get_user_config() {
         err "Config: Sourced user config.    (${XDG_CONFIG_HOME}/neofetch/config.conf)"
         config_file_path="${XDG_CONFIG_HOME}/neofetch/config.conf"
 
-
     elif [[ -f "${XDG_CONFIG_HOME}/neofetch/config" ]]; then
         source "${XDG_CONFIG_HOME}/neofetch/config"
         err "Config: Sourced user config.    (${XDG_CONFIG_HOME}/neofetch/config)"
