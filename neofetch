@@ -4792,18 +4792,23 @@ get_user_config() {
     if [[ -f "$config_file" ]]; then
         source "$config_file"
         err "Config: Sourced user config. (${config_file})"
+        config_file_path="$config_file"
         return
 
     elif [[ -f "${XDG_CONFIG_HOME}/neofetch/config.conf" ]]; then
         source "${XDG_CONFIG_HOME}/neofetch/config.conf"
         err "Config: Sourced user config.    (${XDG_CONFIG_HOME}/neofetch/config.conf)"
+        config_file_path="${XDG_CONFIG_HOME}/neofetch/config.conf"
+
 
     elif [[ -f "${XDG_CONFIG_HOME}/neofetch/config" ]]; then
         source "${XDG_CONFIG_HOME}/neofetch/config"
         err "Config: Sourced user config.    (${XDG_CONFIG_HOME}/neofetch/config)"
+        config_file_path="${XDG_CONFIG_HOME}/neofetch/config"
 
     elif [[ -z "$no_config" ]]; then
         config_file="${XDG_CONFIG_HOME}/neofetch/config.conf"
+        config_file_path="${XDG_CONFIG_HOME}/neofetch/config.conf"
 
         # The config file doesn't exist, create it.
         mkdir -p "${XDG_CONFIG_HOME}/neofetch/"
@@ -5424,7 +5429,8 @@ get_args() {
             # Other
             "--config")
                 case $2 in
-                    "none" | "off" | "") ;;
+                    "none" | "off") ;;
+                    "") get_user_config; printf '\nThe location of the config file is %s\n\n' "$config_file_path" ; exit ;;
                     *)
                         config_file="$(get_full_path "$2")"
                         get_user_config
