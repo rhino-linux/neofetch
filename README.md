@@ -1,3 +1,7 @@
+### Issues Tracker
+
+To report issues or propose new features for this repository, visit [our tracker](https://github.com/rhino-linux/tracker).
+
 <h3 align="center"><img src="https://i.imgur.com/ZQI2EYz.png" alt="logo" height="100px"></h3>
 <p align="center">A command-line system information tool written in bash 3.2+</p>
 
